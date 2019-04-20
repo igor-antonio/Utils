@@ -81,7 +81,7 @@ BEGIN
 
         SELECT
             (SELECT date_time FROM cte_batch_resp_statistics_sum) AS date_time
-            , '>=000000ms & <000100' AS batch_time_ms
+            , '>=000000 & <000100' AS batch_time_ms
             , CAST(ROUND((CAST(ISNULL(SUM(a.cntr_value), 0) AS DECIMAL(38,16))/(SELECT cntr_value FROM cte_batch_resp_statistics_sum)) * CAST(100 AS DECIMAL(38,16)), 1, 1) AS DECIMAL(38,1)) AS [percent]
         FROM
             cte_batch_resp_statistics AS a
@@ -99,7 +99,7 @@ BEGIN
 
         SELECT
             (SELECT date_time FROM cte_batch_resp_statistics_sum) AS date_time
-            , '>=000000ms & <000200' AS batch_time_ms
+            , '>=000000 & <000200' AS batch_time_ms
             , CAST(ROUND((CAST(ISNULL(SUM(a.cntr_value), 0) AS DECIMAL(38,16))/(SELECT cntr_value FROM cte_batch_resp_statistics_sum)) * CAST(100 AS DECIMAL(38,16)), 1, 1) AS DECIMAL(38,1)) AS [percent]
         FROM
             cte_batch_resp_statistics AS a
@@ -118,7 +118,7 @@ BEGIN
 
         SELECT
             (SELECT date_time FROM cte_batch_resp_statistics_sum) AS date_time
-            , '>=000000ms & <000500' AS batch_time_ms
+            , '>=000000 & <000500' AS batch_time_ms
             , CAST(ROUND((CAST(ISNULL(SUM(a.cntr_value), 0) AS DECIMAL(38,16))/(SELECT cntr_value FROM cte_batch_resp_statistics_sum)) * CAST(100 AS DECIMAL(38,16)), 1, 1) AS DECIMAL(38,1)) AS [percent]
         FROM
             cte_batch_resp_statistics AS a
